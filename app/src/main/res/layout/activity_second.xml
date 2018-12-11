@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.second.SecondActivity">
+
+    <EditText
+        android:id="@+id/et_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.dd.CircularProgressButton
+        android:id="@+id/btn_apply"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_background"
+        android:clickable="false"
+        android:text="افزودن"
+        android:textColor="@color/white"
+
+
+        android:textSize="@dimen/button_text_size"
+        android:textStyle="bold"
+        app:cpb_colorIndicator="@color/white"
+        app:cpb_colorIndicatorBackground="@color/colorPrimary"
+        app:cpb_cornerRadius="100dp"
+        app:cpb_paddingProgress="3dp"
+        app:cpb_selectorIdle="@color/colorPrimary"
+        app:cpb_textIdle="افزودن"
+        app:layout_constraintTop_toBottomOf="@id/et_note"
+
+        />
+
+
+</android.support.constraint.ConstraintLayout>
