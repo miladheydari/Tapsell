@@ -18,7 +18,7 @@ object GsonModule {
     @JvmStatic
     fun provideGson(): Gson {
         val gsonBuilder = GsonBuilder()
-        gsonBuilder.registerTypeAdapter(Double::class.java, JsonSerializer<Double> { value, typeOf, context ->
+        gsonBuilder.registerTypeAdapter(Double::class.java, JsonSerializer<Double> { value, _, _ ->
             JsonPrimitive(BigDecimal(value!!).setScale(10,
                     BigDecimal.ROUND_HALF_UP))
         })

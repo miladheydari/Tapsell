@@ -4,34 +4,34 @@ import io.github.miladheydari.tapsell.repository.db.daos.IDao
 
 
 import io.github.miladheydari.tapsell.utils.scheduler.SchedulerProvider
-import io.reactivex.Observable
+import io.reactivex.Single
 
 open class RepositoryBase<T>
 constructor(private val dao: IDao<T>, private val schedulerProvider: SchedulerProvider) : IRepositoryBase<T> {
 
 
-    override fun insert(entities: T): Observable<Unit> {
+    override fun insert(entities: T): Single<Unit> {
 
-        return Observable.fromCallable { dao.insert(entities) }.subscribeOn(schedulerProvider.backgroundThread()).observeOn(schedulerProvider.mainThread())
-
-    }
-
-
-    override fun getList(ids: MutableList<String>): Observable<List<T>> {
-
-        return Observable.fromCallable { dao.getList(ids) }.subscribeOn(schedulerProvider.backgroundThread()).observeOn(schedulerProvider.mainThread())
+        return Single.fromCallable { dao.insert(entities) }.subscribeOn(schedulerProvider.backgroundThread()).observeOn(schedulerProvider.mainThread())
 
     }
 
 
+    override fun getList(ids: MutableList<String>): Single<List<T>> {
 
-    override fun getAll(): Observable<List<T>> {
+        return Single.fromCallable { dao.getList(ids) }.subscribeOn(schedulerProvider.backgroundThread()).observeOn(schedulerProvider.mainThread())
 
-        return Observable.fromCallable { dao.getAll() }.subscribeOn(schedulerProvider.backgroundThread()).observeOn(schedulerProvider.mainThread())
     }
 
-    override fun delete(entity: T): Observable<Int> {
-        return Observable.fromCallable { dao.delete(entity) }.subscribeOn(schedulerProvider.backgroundThread()).observeOn(schedulerProvider.mainThread())
+
+
+    override fun getAll(): Single<List<T>> {
+
+        return Single.fromCallable { dao.getAll() }.subscribeOn(schedulerProvider.backgroundThread()).observeOn(schedulerProvider.mainThread())
+    }
+
+    override fun delete(entity: T): Single<Int> {
+        return Single.fromCallable { dao.delete(entity) }.subscribeOn(schedulerProvider.backgroundThread()).observeOn(schedulerProvider.mainThread())
     }
 
 

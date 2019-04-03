@@ -51,19 +51,19 @@ class LoadingLayout : RelativeLayout {
 
 
     constructor(context: Context) : super(context) {
-        initializeViews(context, null)
+        initializeViews(context)
     }
 
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
-        initializeViews(context, attrs)
+        initializeViews(context)
     }
 
     constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(context, attrs, defStyle) {
-        initializeViews(context, attrs)
+        initializeViews(context)
     }
 
 
-    private fun initializeViews(context: Context, attrs: AttributeSet?) {
+    private fun initializeViews(context: Context) {
         this.mContext = context
 
 

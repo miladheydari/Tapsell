@@ -7,7 +7,7 @@ import dagger.Module
 import dagger.Provides
 import io.github.miladheydari.tapsell.BuildConfig
 import io.github.miladheydari.tapsell.utils.Constants
-import io.github.miladheydari.tapsell.utils.permission.PermissionHandler
+//import io.github.miladheydari.tapsell.utils.permission.PermissionHandler
 import io.github.miladheydari.tapsell.utils.scheduler.SchedulerProvider
 import io.github.miladheydari.tapsell.utils.scheduler.SchedulerProviderImpl
 import java.io.File
@@ -27,13 +27,13 @@ abstract class ApplicationModule {
     @Module
     companion object {
 
-        @Provides
-        @Singleton
-        @JvmStatic
-
-        fun providePermissionHandler(): PermissionHandler {
-            return PermissionHandler()
-        }
+//        @Provides
+//        @Singleton
+//        @JvmStatic
+//
+//        fun providePermissionHandler(): PermissionHandler {
+//            return PermissionHandler()
+//        }
 
         @Provides
         @Singleton
@@ -56,7 +56,7 @@ abstract class ApplicationModule {
         @Singleton
         @JvmStatic
 
-        fun provideDbApiUrl(isDebug: Boolean): String {
+        fun provideDbApiUrl(): String {
             return Constants.URL
 
         }

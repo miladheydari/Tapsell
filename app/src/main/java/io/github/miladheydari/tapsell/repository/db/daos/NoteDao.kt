@@ -15,7 +15,7 @@ abstract class NoteDao : IDao<Note>() {
     abstract override fun getList(ids: MutableList<String>): List<Note>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    abstract override fun insert(entity: Note)
+    abstract override fun insert(note: Note)
 
 
 

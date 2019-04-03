@@ -20,7 +20,8 @@ import io.github.miladheydari.tapsell.di.common.*
         RetrofitModule::class,
         OkHttpInterceptorModule::class,
         GsonModule::class,
-        DbModule::class
+        DbModule::class,
+        ViewModelModule::class
     ]
 )
 interface ApplicationComponent {

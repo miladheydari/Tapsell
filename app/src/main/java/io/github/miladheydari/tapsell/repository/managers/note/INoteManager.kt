@@ -2,10 +2,10 @@ package io.github.miladheydari.tapsell.repository.managers.note
 
 import io.github.miladheydari.tapsell.repository.db.entities.Note
 
-import io.reactivex.Observable
+import io.reactivex.Single
 
 interface INoteManager {
-    fun getAllNotes(): Observable<List<Note>>
-    fun storeNote(note: Note):Observable<Unit>
+    fun getAllNotes(): Single<List<Note>>
+    fun storeNote(note: Note):Single<Unit>
 
 }
